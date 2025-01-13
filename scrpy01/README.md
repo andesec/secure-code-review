@@ -11,6 +11,6 @@ app.config['DB_PASSWORD'] = 'db-password'
 ```
 
 For more information vist:
-https://cwe.mitre.org/data/definitions/798.html
-https://owasp.org/www-community/vulnerabilities/Use_of_hard-coded_password
+- https://cwe.mitre.org/data/definitions/798.html
+- https://owasp.org/www-community/vulnerabilities/Use_of_hard-coded_password
 </details>
