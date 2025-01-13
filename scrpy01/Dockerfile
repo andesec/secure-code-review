@@ -5,6 +5,19 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install flask mysql-connector-python
+# Install Poetry
+RUN pip install poetry
+# RUN pip install --no-cache-dir poetry
 
-CMD ["python", "app.py"]
+# Copy only the dependency files first for caching
+COPY pyproject.toml poetry.lock* ./
+
+# Install dependencies using Poetry
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi
+
+# Expose the Flask app's port
+EXPOSE 5000
+
+# Start the Flask app
+CMD ["poetry", "run", "python", "app.py"]

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS scrpy01;
+
+USE scrpy01;
+
+CREATE TABLE IF NOT EXISTS data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    value VARCHAR(255)
+);
+
+INSERT INTO data (value) VALUES ('sample');
