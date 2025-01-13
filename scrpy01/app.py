@@ -3,7 +3,6 @@ import mysql.connector
 
 app = Flask(__name__)
 
-# Configuration (intentionally insecure)
 app.config['SECRET_KEY'] = 'secret-key'
 app.config['DB_PASSWORD'] = 'db-password'
 app.config['DB_HOST'] = 'mysql'
@@ -13,7 +12,7 @@ app.config['DB_NAME'] = 'scrpy01'
 @app.route('/',  methods=['GET'])
 def home():
     return jsonify({
-        "message": "SCRPY01 - This is a Python secure code review example."
+        "message": "SCRPY01 - This is a secure code review example."
     })
 
 @app.route('/data',  methods=['GET'])
